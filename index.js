@@ -14,7 +14,7 @@
    *          This is intended to be a minimalist version of
    *          coordinating data between clients/servers
    *
-   * @param  {string} docId    Unique Document ID
+   * @param  {string} docId    Unique Document ID passed to send function as path
    * @param  {object} cm       Code mirror instance already instantiated
    * @param  {string} amdata   Results from Automerge.save() to initialize doc
    * @param  {function} sendFunc Send function post CM changes
@@ -63,7 +63,7 @@
       var newDoc = automerge.change(this.doc, this.applyChange.bind(this, change)),
         //changes = automerge.getChanges(this.doc, newDoc),
         nchanges = automerge.getChanges(this.doc, newDoc);
-      this.sendFunc(this.docId, {
+      this.send(this.docId, {
         operation: nchanges,
         actorId: Automerge.getActorId(newDoc)
       }, this.doRes.bind(this));
@@ -130,7 +130,7 @@
    * LiveDoc.prototype.diffToCM - Converts automerge.diff to codemirror changes
    *
    * @param  {object} op op portion of automerge diff object
-   * @return {undefined}  
+   * @return {undefined}
    */
   LiveDoc.prototype.diffToCM = function(op) {
     switch (op.action) {
