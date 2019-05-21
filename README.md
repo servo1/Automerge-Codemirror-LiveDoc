@@ -15,7 +15,7 @@ Potentially the most basic version of coordinating documents between client(s)/s
       });
 
 #  What to expect
-Once you initialize the liveDoc, it will handle tracking all CM changes, convert them to automerge.Changes
+Once you initialize the liveDoc, it will handle tracking all CM changes, convert them to automerge.changes
 and use the 'Send' function to pass the changes to another client/server.  
 
 When the EventEmitter or the last argument as 'ws' above receives ws.on(docId) (/path/to/my/doc)
