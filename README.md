@@ -1,6 +1,8 @@
 # Automerge-Codemirror-LiveDoc
 Potentially the most basic version of coordinating documents between client(s)/server(s) with Automerge and Codemirror
 
+You will need to replace 'mc' as it's used as an eventemitter with your own.
+
 # Example Implementation
 ```
 var textbox = document.getElementById('mytextboxid),
