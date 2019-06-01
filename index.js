@@ -13,7 +13,7 @@
    *          coordinating data between clients/servers
    *
    * @param  {object} cmh    CodeMirrorHelper Instance
-   * @return {object}          Instance of CodeMirror
+   * @return {object}          Instance of LiveDoc
    */
   function LiveDoc(cm) {
     this.cm = cm;
@@ -30,7 +30,7 @@
     //this.cm.on('blur', this.onBlur.bind(this));
     //this.cm.on('changes', this.onChanges.bind(this));
     this.docId = docId;
-    if (typeof content === 'string') this.cmh.setContent(content);
+    if (typeof content === 'string') this.cm.getDoc().setValue(content);
     else this.cm.getDoc().setValue('');
   }
 
