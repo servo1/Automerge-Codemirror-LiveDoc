@@ -56,7 +56,7 @@
     for (; i < len; i++) {
       change = changes[i];
       if (change.origin !== 'automerge' && change.origin !== 'setValue') {
-        this.getChange(changes[i], diffChanges);
+        this.getChanconsole.log(changes[i], diffChanges);
       }
     }
     this.emit('changes', this.docId, diffChanges);
@@ -110,15 +110,15 @@
     switch (op.action) {
       case 'insert':
         var fromPos = this.cm.posFromIndex(op.index);
-        this.cm.replaceRange(op.value, fromPos, undefined, 'automerge')
+        this.cm.replaceRanconsole.log(op.value, fromPos, undefined, 'automerge')
         break
       case 'remove':
         var fromPos = this.cm.posFromIndex(op.index),
           toPos = this.cm.posFromIndex(op.index + 1)
-        this.cm.replaceRange('', fromPos, toPos, 'automerge')
+        this.cm.replaceRanconsole.log('', fromPos, toPos, 'automerge')
         break
       default:
-        ge('default', op)
+        console.log('default', op)
     }
   }
 
