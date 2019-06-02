@@ -1,6 +1,8 @@
 # Automerge-Codemirror-LiveDoc
 Potentially the most basic version of coordinating documents between client(s)/server(s) with Automerge and Codemirror
 
+This is intended to be used with https://github.com/servo1/automergecontroller.  Although, it is fairly easy to implement automerge without the AutoMergeController.  
+
 You will need to replace 'mc' as it's used as an eventemitter with your own.
 
 # Example Implementation
