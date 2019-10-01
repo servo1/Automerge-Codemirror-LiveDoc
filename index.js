@@ -56,7 +56,7 @@
     for (; i < len; i++) {
       change = changes[i];
       if (change.origin !== 'automerge' && change.origin !== 'setValue') {
-        this.getChanconsole.log(changes[i], diffChanges);
+        this.getChange(changes[i], diffChanges);
       }
     }
     this.emit('changes', this.docId, diffChanges);
